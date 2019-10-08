@@ -1141,7 +1141,7 @@ func (v *Viper) Unset(key string) {
 
 	path := strings.Split(key, v.keyDelim)
 	lastKey := strings.ToLower(path[len(path)-1])
-	deepestMap := deepSearch(v.override, path[0:len(path)-1])
+	deepestMap := deepSearch(v.config, path[0:len(path)-1])
 
 	delete(deepestMap, lastKey)
 }
